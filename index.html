@@ -1,6 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <script type="text/javascript">
+      (function () {
+        if (
+          location.pathname !== "/" &&
+          location.pathname.indexOf(".") === -1
+        ) {
+          sessionStorage.redirectTo =
+            location.pathname + location.search + location.hash;
+          location.replace("/");
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
